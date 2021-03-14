@@ -61,4 +61,4 @@ def dat_cal():
         row_num += 1 #this shifts to the next row in the primary column
 dat_cal()
 
-file1.save('max reformat 2.xlsx')
+file1.save('Highlighted information.xlsx')
