@@ -61,4 +61,11 @@ def dat_cal():
         row_num += 1 #this shifts to the next row in the primary column
 dat_cal()
 
+# Temporary example Cell merging
+ws.merge_cells('A2:D3')
+
+# Cell alignment
+curCell = ws['A2']  # aligns the text in the merged cells by calling the coordinates of the top left cell.
+curCell.alignment = Alignment(horizontal='center', vertical='center')
+
 file1.save('Highlighted information.xlsx')
