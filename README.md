@@ -1,12 +1,12 @@
 # Excel-Autoplanner
--This program looks though a specified column(e.g. G) on excel and transfers all cells which contain numbers greater than 500 to a new column along with the appropriate colour that 
-cell contained. Any time it finds a cell in the specified column it looks across that row at cells on the same row and additional specified columns(e.g. column B on the same row) 
-and copy that information onto the same row but one column over as the information from the first specfied column. 
+-This script autofills in a teachers timetable based on the class and day/time they have said class, with respect to how the subject is colour coded and how it is merged.
+-It is written in python and uses the openpyxl and xlsxwriter packages
+-In order to run the script it must be in the same folder as the excel document you wish to run it on, and in addition make sure that the name of the excel document is in the appropriate save/open commands on lines 9, 197, 200, 238
 
--For example if it hit a number >500 in column G(e.g. 600) then it would look across at cells on the same row and additional specified columns(e.g. A) and it would take the contents
-from that cell as well, say for example it was 'central'. Then it copys the 600 to row 2 in another column(e.g. K) and will copy central to the cell on the same row but one column 
-along, meanwhile doing this the program has copied background colours from the orginal cells and copied that over.
-
--It is written in Python, using the openpyxl library
-
--The idea is to eventually adapt this program to automate the filling in of multiple timetables from one input.
+-Note this script is made to run on a specific format of timetable(as seen in the example data) wherein there is one section for teachers names and one for all the classe's being taught. Every teacher's name must have there initals in brackets next to it and every class must have the teachers initals in brackets next to it in order for the script to know which teacher to plot the class to. It is also important that there is a whitespace between the teacers name and there initials in brackets like so
+  John Smith (JS)
+ and not
+  John Smith(JS)
+ 
+ -In addition the script cannot copy over theme colours to new cells, so if you wish to copy colour coding over it must be coloured with standard/custom colours
+ -Finally the script has a overwrite log, if you accidentally schedule the teacher for two classes at the exact same timeslot it will be written into the overwrite log text file. 
